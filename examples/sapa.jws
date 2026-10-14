@@ -1,0 +1,3 @@
+// Interaktif: takon jeneng banjur nyapa
+simpen jeneng = waca("Sinten asmane panjenengan? ")
+tulis "Sugeng rawuh, " + jeneng + "!"

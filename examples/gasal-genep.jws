@@ -1,0 +1,10 @@
+// Gasal utawa genep, nganggo yen / liyane, terus lan mandheg
+saben k ing urutan(1, 100) {
+    yen k > 7 { mandheg }
+    yen k == 3 { terus }
+    yen k % 2 == 0 {
+        tulis k, "genep"
+    } liyane {
+        tulis k, "gasal"
+    }
+}

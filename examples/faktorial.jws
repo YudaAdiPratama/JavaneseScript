@@ -1,0 +1,11 @@
+// Faktorial nganggo rekursi
+gawe faktorial(n) {
+    yen n <= 1 {
+        balekna 1
+    }
+    balekna n * faktorial(n - 1)
+}
+
+saben k ing urutan(1, 7) {
+    tulis k, "! =", faktorial(k)
+}

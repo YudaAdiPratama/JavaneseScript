@@ -1,0 +1,13 @@
+// Deret Fibonacci nganggo puteran salawase
+simpen a = 0
+simpen b = 1
+simpen deret = []
+
+salawase dawa(deret) < 10 {
+    lebokna(deret, a)
+    simpen c = a + b
+    a = b
+    b = c
+}
+
+tulis deret
