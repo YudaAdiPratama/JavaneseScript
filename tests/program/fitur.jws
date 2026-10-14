@@ -1,0 +1,61 @@
+// Kumpulan fitur cilik-cilik
+tulis 1 + 2 * 3
+tulis 7 / 2, 10 % 3, -7 % 3, 2 - 5
+tulis 0.1 + 0.2, 1 / 3, 2 / 3, 100 / 7
+tulis 123456789012345678901234567890
+tulis 0.000001, 0.0000001
+tulis 99999999999999999999, 999999999999999999999
+tulis -0.5 * 0
+tulis 3.14159265358979
+tulis "a" + 1, 1 + "b", "x" + [1, "y"], "q" + kosong
+tulis [1, 2] + [3]
+tulis [1, "dua", [bener, kosong], "a\"b\\c\nd\te"]
+tulis "ab" * 3, "ab" * 0
+tulis 1 < 2, 2 <= 2, 3 > 4, "a" < "b", "b" >= "abc"
+tulis 1 == 1, "a" == "a", [1, [2]] == [1, [2]], kosong == luput, 1 != 2
+tulis bener lan 5, luput lan 5, 0 utawa "x", "" utawa kosong, ora 0, ora "a"
+tulis --5
+simpen d = [1, 2, 3]
+tulis "halo"[0], "héllo"[1], dawa("héllo")
+simpen s = "abc"
+gawe f(a, b) { balekna a + b }
+gawe f() { balekna }
+gawe f() { }
+tulis gawe(x) { balekna x }
+tulis dawa, jinis
+tulis jinis(1), jinis("a"), jinis(bener), jinis([]), jinis(kosong), jinis(dawa), jinis(gawe() {})
+tulis angka("42"), angka(" 3.5 "), angka("-1e2"), angka(".5"), angka("5."), angka("0x1F"), angka("Infinity")
+tulis angka([7])
+tulis tembung(12) + tembung([1, "a"]), dawa(tembung(3.5))
+tulis urutan(0, 5), urutan(5, 0), urutan(0.5, 3)
+simpen l = []
+saben c ing "héy" { tulis c }
+saben x ing [1, 2, 3] { yen x == 2 { terus }; tulis x }
+simpen i = 0
+yen 1 { tulis "a" } liyane yen 2 { tulis "b" } liyane { tulis "c" }
+yen 0 { tulis "a" } liyane yen 2 { tulis "b" } liyane { tulis "c" }
+yen 0 { tulis "a" } liyane yen "" { tulis "b" } liyane { tulis "c" }
+gawe g() { mandheg }
+gawe r(n) { balekna r(n + 1) }
+tulis 1
+tulis 2
+gawe (x) { }
+gawe pembilang() { simpen n = 0; balekna gawe() { n = n + 1; balekna n } }
+simpen a = 1; simpen b = 2; tulis a + b
+tulis 1
+// komentar
+tulis 2 // komentar
+tulis "a" + "b"
+(1 + 2)
+tulis 1
+[1, 2]
+tulis 1
+-5
+simpen big = 1
+tulis 0.1 * 3, 1.005 * 1000, 123.456
+simpen q = [1, 2]
+tulis 2 * 3 + 4 * 5 - 6 / 2
+tulis ora 1 == 2
+tulis 1 == 1 == bener
+tulis "é" < "z", "Z" < "a"
+tulis waca

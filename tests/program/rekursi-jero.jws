@@ -1,0 +1,10 @@
+gawe jero(n) {
+    yen n == 0 { balekna 0 }
+    saben x ing [1] {
+        salawase bener {
+            yen bener { balekna 1 + jero(n - 1) }
+        }
+    }
+}
+tulis jero(9990)
+tulis jero(20000)

@@ -22,14 +22,22 @@ Output:
 6 ! = 720
 ```
 
-## Menjalankan
+## Memasang
 
-Butuh Node.js 18 ke atas, tanpa dependensi lain.
+JavaneseScript ditulis dalam C dan tidak butuh apa-apa selain compiler C (gcc atau clang).
 
 ```sh
-node bin/jws.js examples/halo.jws   # jalankan berkas .jws
-node bin/jws.js                     # REPL interaktif
-npm test                            # jalankan tes
+make            # menghasilkan program ./jws
+make test       # menjalankan semua tes
+```
+
+Program `jws` yang dihasilkan berdiri sendiri, jadi bisa disalin ke mana saja (misalnya `/usr/local/bin`).
+
+## Menjalankan
+
+```sh
+./jws examples/halo.jws   # jalankan berkas .jws
+./jws                     # REPL interaktif
 ```
 
 ## Tembung kunci
@@ -74,8 +82,16 @@ npm test                            # jalankan tes
 
 ## Cara kerja
 
-JavaneseScript punya tata bahasa dan implementasi sendiri, bukan JavaScript yang kata kuncinya diganti:
+Kode sumbernya ada di `src/`:
 
-1. `src/lexer.js` memecah kode menjadi token.
-2. `src/parser.js` menyusun token jadi pohon sintaks (AST) sesuai tata bahasa JavaneseScript.
-3. `src/interpreter.js` menjalankan AST langsung, lengkap dengan lingkup variabel, closure, dan penanganan kesalahan.
+1. `lexer.c` memecah kode menjadi token.
+2. `parser.c` menyusun token jadi pohon sintaks (AST) sesuai tata bahasa JavaneseScript.
+3. `interp.c` menjalankan AST: lingkup variabel, closure, fungsi bawaan, dan pesan kesalahan.
+4. `value.c` mengurus nilai (angka, teks, daftar, fungsi), format output, dan *garbage collector* yang membersihkan memori yang sudah tidak dipakai.
+5. `main.c` adalah program `jws` itu sendiri: menjalankan berkas atau membuka REPL.
+
+Rekursi bisa sangat dalam (lebih dari 100.000 tingkat). Kalau terlalu dalam, program berhenti dengan pesan `rekursi kakehan`, tidak crash.
+
+## Tes
+
+`tests/run.sh` menjalankan setiap berkas `.jws` di `examples/` dan `tests/`, lalu membandingkan output, pesan kesalahan, dan kode keluarnya dengan berkas `.out`.

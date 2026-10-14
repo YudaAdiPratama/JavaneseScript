@@ -1,0 +1,21 @@
+gawe pembilang() {
+    simpen n = 0
+    balekna gawe() { n = n + 1; balekna n }
+}
+simpen fs = []
+saben i ing urutan(0, 200) {
+    simpen c = pembilang()
+    c()
+    lebokna(fs, c)
+    simpen t = "x" + i + [i, "y" + i]
+}
+simpen total = 0
+saben f ing fs { total = total + f() }
+tulis total
+gawe fib(n) { yen n < 2 { balekna n }; balekna fib(n - 1) + fib(n - 2) }
+tulis fib(15), [fib(5), "a" + fib(6), [fib(7)]]
+simpen s = ""
+saben ch ing "héllo wörld" { s = ch + s }
+tulis s, s[3], dawa(s)
+gawe jero(n) { yen n == 0 { balekna 0 }; balekna 1 + jero(n - 1) }
+tulis jero(500)
